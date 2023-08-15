@@ -8,8 +8,8 @@ fn main() {
     let x = five(); // use return value to initialize var x
     println!("{}",x);
 
-    //let five_fact = factorial(3);
-    //println!("{}",five_fact);
+    let five_fact = factorial(5);
+    println!("Factorial is {}",five_fact);
 
     let twenty_four_h_in_s = h_to_s(24);
     println!("{twenty_four_h_in_s}");
@@ -25,17 +25,17 @@ fn value_w_units (value: f64, unit: &str) {
 
 fn statements_and_expressions() {
 
-    let y = 6; // this doesnt evaluate to a value, this is a statement
+    let _y = 6; // this doesnt evaluate to a value, this is a statement
     //fn is a statement too, entire preceding block is a stament
 
     //let x = let y = 6;
     // not supported, let y = 6 is a statement with no value, nothing for x to bind to
 
     //calling fn is an expression
-    let a = some_other_fn(10);
+    let _a = some_other_fn(10);
 
     //calling a macro is an expression
-    let b = println!("abc");
+    let _b = println!("abc");
 
     //calling a curly brace scope is an expressoin
     let c = {
@@ -52,20 +52,20 @@ fn five() -> i64 {
     5// returns this expression as val
 }
 
-/* 
+
 fn factorial(val : u128) -> u128{
-    let factorized: u128 = val;
-    let one_less: u128 = val;
+    let mut factorized: u128 = val;
+    let mut one_less: u128 = val;
     loop{
-        let one_less: u128 = one_less - 1; //loop starts at initial value again, thats the mistakte im doing
-        if one_less <= 2 {
-            return factorized;
+        one_less = one_less - 1; //loop starts at initial value again, thats the mistakte im doing
+        if one_less < 2 {
+            break factorized;
         };
         println!("{one_less}");
-        let factorized: u128 = factorized*one_less;
+        factorized = factorized*one_less;
         println!("{factorized}");
     } 
-} */
+} 
 
 //idk how to implement this yet
 
